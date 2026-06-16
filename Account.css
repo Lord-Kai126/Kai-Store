@@ -1,0 +1,50 @@
+html {
+    background-color: rgb(48, 48, 48);
+    text-align: center;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    width: 100%;
+    text-align: center; 
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    width: 25%;
+}
+
+.account-info{
+    flex: auto;
+    flex-direction: column;
+    
+}
+
+/*RESPONSIVE BREAKPOINTS*/
+
+/* Tablet (≤ 768px) */
+@media (max-width: 768px) {
+    input[type="email"],
+    input[type="password"],
+    input[type="text"] {
+        width: 60%;
+    }
+}
+
+/* Mobile (≤ 480px) */
+@media (max-width: 480px) {
+    input[type="email"],
+    input[type="password"],
+    input[type="text"] {
+        width: 90%;
+    }
+}
