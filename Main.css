@@ -1,14 +1,12 @@
-* {
-  box-sizing: border-box;
-  font-family: sans-serif;
-}
-
 html {
   background-color: #150e00;
   color: white;
   scroll-behavior: smooth;
   overflow-x: hidden;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
+
 body {
   margin: 0;
   padding: 0;
@@ -98,7 +96,7 @@ body {
   background-color: #b87200;
 }
 
-/* ─── GAME SECTION (sub-nav) ─── */
+/* ─── GAME SECTION ── */
 .game-section {
   background-color: rgb(37, 37, 37);
   padding: 10px 15px;
@@ -136,6 +134,8 @@ body {
   gap: 2px;
 }
 
+/*─── Hero Banner ───*/
+
 .hero-banner {
   background-size: cover;
   background-position: center;
@@ -153,7 +153,6 @@ body {
 .hero-text {
   color: white;
   text-align: center;
-  /* add text shadow so it's readable over image */
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
 }
 
@@ -199,6 +198,7 @@ body {
   color: #111;
   transform: scale(1.06);
 }
+
 @keyframes heroPan {
   0% {
     background-position: center 40%;
@@ -236,7 +236,10 @@ body {
   opacity: 0;
 }
 
-.recommend,.top-new,.category-title,.browse-title{
+.recommend,
+.top-new,
+.category-title,
+.browse-title {
   color: white;
   font-weight: 600;
 }
@@ -249,6 +252,7 @@ body {
   font-size: 20px;
   padding: 5px;
   margin-bottom: 10px;
+  font-weight: 600;
 }
 
 .carousel-wrapper {
@@ -347,7 +351,33 @@ body {
   border-radius: 10px;
 }
 
-/* ─── DOTS → NUMBERS ─── */
+.slide-info p {
+  font-size: 15px;
+  line-height: 1.5;
+  text-align: justify;
+  margin: 0;
+  hyphens: auto;
+  overflow: hidden;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+
+.slide-info .tags span {
+  background: #222222;
+  border: 1px solid #ffaa00;
+  color: #ffffff;
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 10px;
+  white-space: nowrap;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+/* ─── DOTS NUMBERS ─── */
 .dots {
   display: flex;
   flex-direction: row;
@@ -378,37 +408,8 @@ body {
   transform: scale(1.2);
 }
 
-.slide-info p {
-  font-size: 15px;
-  line-height: 1.5;
-  text-align: justify;
-  margin: 0;
-  hyphens: auto;
-  overflow: hidden;
-  flex: 1;
-  display: -webkit-box;
-  -webkit-line-clamp: 5;
-  line-clamp: 5;
-  -webkit-box-orient: vertical;
-}
+/*───CAROUSEL ANIMATIONS───*/
 
-.slide-info .tags span {
-  background-color: rgb(90, 90, 90);
-  color: rgb(255, 255, 255);
-  display: inline-block;
-  border-radius: 5px;
-  padding: 5px 10px;
-  font-size: 15px;
-  margin-right: 5px;
-  flex-shrink: 0;
-  padding-top: 8px;
-  border-top: 1px solid black;
-}
-/* ════════════════════════════════════════
-   CAROUSEL ANIMATIONS
-════════════════════════════════════════ */
-
-/* ─── CAROUSEL HOVER ANIMATIONS ─── */
 .slide {
   transition:
     transform 0.3s ease,
@@ -485,7 +486,40 @@ body {
   color: #ffaa00;
 }
 
-/* ─── CARD HOVER EFFECTS (New Release) ─── */
+.card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.card-bottom .cart {
+  color: white;
+  background-color: #b87200;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 10px;
+  white-space: nowrap;
+  margin-left: auto;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.card-bottom .cart:hover {
+  background-color: #ffaa00;
+  color: #111;
+  transform: scale(1.06);
+  box-shadow:
+    0 0 15px rgba(255, 170, 0, 0.5),
+    0 0 30px rgba(255, 170, 0, 0.25);
+}
+
+/* ─── New Release Game ─── */
 .card {
   transition:
     transform 0.25s ease,
@@ -559,7 +593,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.15s, box-shadow 0.3s ease, filter 0.3s ease;
+  transition:
+    transform 0.15s,
+    box-shadow 0.3s ease,
+    filter 0.3s ease;
   cursor: pointer;
 }
 .cat-label {
@@ -574,28 +611,34 @@ body {
     font-size 0.25s ease;
 }
 
-.c1, .c7 {
+.c1,
+.c7 {
   background: #2e0d4e;
 }
-.c1 .cat-label, .c7 .cat-label {
+.c1 .cat-label,
+.c7 .cat-label {
   color: #e040fb;
   text-shadow:
     0 0 10px #e040fb99,
     0 0 20px #e040fb55;
 }
-.c2, .c8 {
+.c2,
+.c8 {
   background: #0d1f3c;
 }
-.c2 .cat-label, .c8 .cat-label {
+.c2 .cat-label,
+.c8 .cat-label {
   color: #29b6f6;
   text-shadow:
     0 0 10px #29b6f699,
     0 0 20px #29b6f655;
 }
-.c3, .c9 {
+.c3,
+.c9 {
   background: #3b2100;
 }
-.c3 .cat-label, .c9 .cat-label {
+.c3 .cat-label,
+.c9 .cat-label {
   color: #ffa726;
   text-shadow:
     0 0 10px #ffa72699,
@@ -629,11 +672,8 @@ body {
     0 0 20px #d4e15755;
 }
 
-/* ════════════════════════════════════════
-   CATEGORY CARD ANIMATIONS
-════════════════════════════════════════ */
+/* ─── CATEGORY CARD ANIMATIONS ───*/
 
-/* Staggered entrance animation for category cards */
 @keyframes catFadeUp {
   from {
     opacity: 0;
@@ -645,7 +685,6 @@ body {
   }
 }
 
-/* Enhanced hover */
 .cat-card:hover {
   transform: translateY(-8px) scale(1.06);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
@@ -656,7 +695,6 @@ body {
   font-size: 13px;
 }
 
-/* ─── MAIN CONTENT WRAPPER ─── */
 .main-content {
   max-width: 1000px;
   margin: 0 auto;
@@ -664,13 +702,13 @@ body {
   box-sizing: border-box;
 }
 
-/* ─── BROWSE ─── */
+/* ─── Browse Game Content ─── */
 .browse {
   max-width: 100%;
   margin: 0;
   padding: 20px 0;
 }
- 
+
 .browse-title {
   scroll-margin-top: 90px;
   padding: 5px;
@@ -679,7 +717,7 @@ body {
   margin-bottom: 10px;
   font-weight: 600;
 }
- 
+
 .game-list {
   max-width: 100%;
   margin: 0;
@@ -687,7 +725,7 @@ body {
   flex-direction: column;
   gap: 2px;
 }
- 
+
 .game-row {
   display: flex;
   align-items: center;
@@ -701,14 +739,14 @@ body {
     border-color 0.2s ease,
     background 0.2s ease;
 }
- 
+
 .game-row:hover {
   transform: translateX(6px);
   background: #2e2e2e;
   border-left: 3px solid #5b9bd5;
   border-color: #5b9bd5;
 }
- 
+
 .game-thumb {
   width: 230px;
   height: 130px;
@@ -717,7 +755,7 @@ body {
   object-position: center;
   flex-shrink: 0;
 }
- 
+
 .game-info {
   padding: 0 30px;
   flex: 1;
@@ -726,7 +764,7 @@ body {
   gap: 4px;
   overflow: hidden;
 }
- 
+
 .game-name {
   font-size: 15px;
   font-weight: 600;
@@ -735,7 +773,7 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
 }
- 
+
 .game-meta {
   display: flex;
   flex-direction: column;
@@ -743,12 +781,12 @@ body {
   gap: 4px;
   margin-left: -2px;
 }
- 
+
 .game-meta .tags {
   display: flex;
   gap: 6px;
 }
- 
+
 .game-meta .tags span {
   background: #222222;
   border: 1px solid #ffaa00;
@@ -758,24 +796,65 @@ body {
   white-space: nowrap;
   font-size: 12px;
 }
- 
+
 .game-rating {
   font-size: 13px;
   color: #ffaa00;
   white-space: nowrap;
 }
- 
+
 .game-rating i {
   margin-right: 2px;
 }
- 
+
 .game-price {
   text-align: right;
-  padding-right: 20px;
   font-size: 15px;
   font-weight: 600;
   color: #ffaa00;
   white-space: nowrap;
+}
+
+.row-price-cart {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 130px;
+  gap: 8px;
+  margin-left: auto;
+  padding-right: 20px;
+}
+
+.row-price-cart .game-price {
+  text-align: center;
+}
+
+.row-price-cart .cart {
+  text-align: center;
+  box-sizing: border-box;
+  align-self: center;
+  color: white;
+  background-color: #b87200;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 10px;
+  white-space: nowrap;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.row-price-cart .cart:hover {
+  background-color: #ffaa00;
+  color: #111;
+  transform: scale(1.06);
+  box-shadow:
+    0 0 15px rgba(255, 170, 0, 0.5),
+    0 0 30px rgba(255, 170, 0, 0.25);
 }
 
 /* ─── FOOTER ─── */
@@ -878,10 +957,7 @@ footer .footer-bar > div.logo {
   font-size: 14px;
 }
 
-
-/* ════════════════════════════════════════
-   RESPONSIVE BREAKPOINTS
-════════════════════════════════════════ */
+/* ─── RESPONSIVE BREAKPOINTS ─── */
 
 /* ─── Tablet (≤ 768px) ─── */
 @media (max-width: 768px) {
@@ -967,8 +1043,22 @@ footer .footer-bar > div.logo {
   }
 
   .game-price {
-    padding-right: 12px;
     font-size: 13px;
+  }
+
+  .row-price-cart {
+    gap: 10px;
+    padding-right: 12px;
+  }
+
+  .row-price-cart .cart {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  .card-bottom .cart {
+    font-size: 11px;
+    padding: 6px 8px;
   }
 
   footer .footer-bar {
@@ -1091,8 +1181,28 @@ footer .footer-bar > div.logo {
 
   .game-price {
     font-size: 13px;
-    padding: 0 10px 8px;
-    width: 100%;
     text-align: left;
+  }
+
+  .game-row {
+    flex-wrap: wrap;
+  }
+
+  .row-price-cart {
+    width: 110px;
+    align-items: stretch;
+    gap: 6px;
+    padding: 0 10px 8px;
+    margin-left: 0;
+  }
+
+  .row-price-cart .cart {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  .card-bottom .cart {
+    font-size: 11px;
+    padding: 5px 7px;
   }
 }
